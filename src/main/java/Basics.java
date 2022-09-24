@@ -39,10 +39,7 @@ public class Basics {
          *    (Relevant reading: 1.1.3. Printing things)
          */
         System.out.println(7 + 5);
-
-        /* TODO (Task 1): Write a line of code below that prints the string
-         *                Hello World!
-         */
+        System.out.println("Hello World!");
 
 
 
@@ -57,11 +54,7 @@ public class Basics {
          *
          *    (Relevant reading: 1.2. Variables and Types)
          */
-
-        /*
-         * TODO (Task 2): Create a variable named my_variable and assign it the
-         *                value 100.
-         */
+        int my_variable = 100;
 
 
 
@@ -87,18 +80,9 @@ public class Basics {
          *    (Relevant reading: 1.8.2. for Loops)
          */
 
-        /*
-         * TODO (Task 3): Create a for-loop that loops from 10 to 0, printing
-         *                the following at each iteration:
-         *                Current count: #
-         *
-         * e.g. the end result should look like:
-         * Current count: 10
-         * Current count: 9
-         *     ...
-         * Current count: 1
-         * Current count: 0
-         */
+        for (int i = 10; i >= 0; i--){
+            System.out.println("Current count: " + i);
+        }
 
 
     }
@@ -142,7 +126,10 @@ public class Basics {
          */
         StringBuilder ret = new StringBuilder();
 
-        // Fill in the rest of the body here
+        String[] words = to_split.split(" ", 7);
+        for (String word : words) {
+            ret.append(word.charAt(0));
+        }
 
         return ret.toString();
     }
@@ -164,24 +151,10 @@ public class Basics {
     public static int oddSum(int[] arr) {
         int current_sum = 0;
 
-        /* TODO (Task 5): Complete this method body using a for-loop.
-         *                You can find the length of an array by using the
-         *                .length attribute (e.g. arr.length)
-         *                You can index into arrays as we do in Python
-         *                (e.g. arr[i] gives you the item at index i).
-         */
+        for (int i = 1; i < arr.length; i = i + 2){
+            current_sum += arr[i];
+        }
 
         return current_sum;
     }
-
-
-    /*
-     * TODO (Task 6): Submit the changes you made on GitHub!
-     *                When you submit it, go to the 'Actions' tab. You should
-     *                be able to see this exercise being autograded!
-     *
-     *                You can click on the ongoing action to see more details.
-     *                If the tests don't pass, look at the results and revise
-     *                accordingly.
-     */
 }
